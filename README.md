@@ -1,4 +1,4 @@
-# lodevivicomidacaseraemprendiendo
+# LO-DE-VIVI
 
 ## Descripción del Proyecto
 
@@ -48,7 +48,7 @@ Los productos se gestionan dinámicamente desde **Firebase Firestore**, y el est
 
 ## Estructura de Carpetas
 
-lodevivicomidacaseraemprendiendo/
+LO-DE-VIVI/
 │
 ├─ package.json
 ├─ README.md
@@ -87,7 +87,7 @@ lodevivicomidacaseraemprendiendo/
 
 ## Autor
 
-- **Nombre:** [Micaela 
+- **Nombre:** Micaela 
 - **Apellido:** Martino  
 - **Tema del proyecto:** Comidas Caseras  
 - **Descripción corta:** Emprendimiento de comidas caseras hechas con amor y entusiasmo, con productos premium y hogareños.  
@@ -95,7 +95,7 @@ lodevivicomidacaseraemprendiendo/
 ## Cómo Ejecutar el Proyecto
 
 1. Clonar el repositorio:  
-   git clone https://github.com/TU_USUARIO/lodevivicomidacaseraemprendiendo.git
+   git clone https://github.com/Micamaa/ProyectofinalE-commerceMartino.git
 
 2. Instalar dependencias:  
    npm install
