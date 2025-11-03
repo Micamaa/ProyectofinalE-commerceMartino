@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d1b3e;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fbe870;
+  text-decoration: none;
+}
+
+.navbar-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-cart {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navbar-cart span {
+  background-color: #fbe870;
+  color: #0d1b3e;
+  border-radius: 50%;
+  padding: 2px 8px;
+  margin-left: 5px;
+}
