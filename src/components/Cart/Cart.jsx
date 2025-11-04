@@ -1,41 +1,28 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Link } from "react-router-dom";
-import "./Cart.css";
 
 const Cart = () => {
-  const { cart, clearCart, getTotalPrice } = useContext(CartContext);
+  const { cart, getTotal, removeFromCart, clearCart } = useContext(CartContext);
 
-  if (cart.length === 0)
-    return (
-      <div>
-        <h2>Tu carrito está vacío</h2>
-        <Link to="/productos">Volver a productos</Link>
-      </div>
-    );
+  if (cart.length === 0) return <p>El carrito está vacío</p>;
 
   return (
     <div className="cart-container">
-      <h2>Carrito de compras</h2>
-      {cart.map((item) => (
-        <div key={item.id} className="cart-item">
-          <img src={item.imagen} alt={item.nombre} className="cart-item-image" />
-          <div>
-            <h3>{item.nombre}</h3>
-            <p>{item.descripcion}</p>
-            <p>
-              {item.quantity} x ${item.precio} = ${item.quantity * item.precio}
-            </p>
+      {cart.map((product) => (
+        <div key={product.id} className="cart-item">
+          <img src={product.image} alt={product.name} className="cart-item-image" />
+          <div className="cart-item-info">
+            <h4>{product.name}</h4>
+            <p>{product.description}</p>
+            <p>Precio unitario: ${product.price}</p>
+            <p>Cantidad: {product.quantity}</p>
+            <p>Subtotal: ${product.price * product.quantity}</p>
+            <button onClick={() => removeFromCart(product.id)}>Eliminar</button>
           </div>
         </div>
       ))}
-
-      <h3>Total: ${getTotalPrice()}</h3>
-
+      <h3>Total: ${getTotal()}</h3>
       <button onClick={clearCart}>Vaciar carrito</button>
-      <Link to="/checkout">
-        <button>Finalizar compra</button>
-      </Link>
     </div>
   );
 };
