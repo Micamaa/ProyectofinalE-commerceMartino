@@ -1,9 +1,13 @@
 .item-detail-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
   max-width: 900px;
   margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .item-detail-image {
@@ -17,11 +21,14 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  justify-content: center;
+  flex: 1;
 }
 
 .item-detail-price {
   font-weight: bold;
   font-size: 20px;
+  color: #333;
 }
 
 .item-detail-actions {
@@ -33,6 +40,8 @@
 .item-detail-actions input[type="number"] {
   width: 60px;
   padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .item-detail-actions button {
@@ -44,10 +53,15 @@
   cursor: pointer;
 }
 
+.item-detail-actions button:hover {
+  background-color: #0056b3;
+}
+
 .added-message {
   color: #155724;
   background-color: #d4edda;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 4px;
-  margin-top: 10px;
+  font-weight: 500;
+  width: fit-content;
 }

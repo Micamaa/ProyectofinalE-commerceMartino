@@ -12,29 +12,39 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productRef = doc(db, "products", id);
-    getDoc(productRef)
-      .then((docSnap) => {
+    const fetchProduct = async () => {
+      try {
+        const productRef = doc(db, "products", id);
+        const docSnap = await getDoc(productRef);
         if (docSnap.exists()) {
           const data = docSnap.data();
-          setProduct({ 
+          setProduct({
             id: docSnap.id,
-            nombre: data.name,
-            descripcion: data.description,
-            precio: data.price,
-            imagen: data.image
+            name: data.name,
+            description: data.description,
+            price: data.price,
+            image: data.image,
           });
+        } else {
+          console.log("No existe el producto");
         }
-      })
-      .finally(() => setLoading(false));
+      } catch (error) {
+        console.error("Error al obtener producto:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProduct();
   }, [id]);
 
   const handleAdd = (quantity) => {
-    addToCart({ ...product, quantity });
+    if (product) {
+      addToCart({ ...product, quantity });
+    }
   };
 
   if (loading) return <p>Cargando...</p>;
-  if (!product) return <p>Producto no encontrado</p>;
+  if (!product) return <p>Producto no encontrado.</p>;
 
   return <ItemDetail product={product} onAdd={handleAdd} />;
 };
