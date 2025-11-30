@@ -28,7 +28,6 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  // **Esta es la función que calcula el total**
   const getTotal = () => {
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
@@ -38,8 +37,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider
-      value={{
+    <CartContext.Provider value={{
         cart,
         addToCart,
         removeFromCart,

@@ -24,6 +24,7 @@ const ItemDetailContainer = () => {
             description: data.description,
             price: data.price,
             image: data.image,
+            stock: data.stock || 10 // fallback si no hay stock
           });
         } else {
           console.log("No existe el producto");

@@ -15,10 +15,10 @@ const ItemListContainer = () => {
           const data = doc.data();
           return {
             id: doc.id,
-            nombre: data.name,
-            descripcion: data.description,
-            precio: data.price,
-            imagen: data.image
+            name: data.name,
+            description: data.description,
+            price: data.price,
+            image: data.image
           };
         });
         setProducts(items);

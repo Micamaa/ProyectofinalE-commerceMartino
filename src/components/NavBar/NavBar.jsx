@@ -6,6 +6,8 @@ import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
   const { cart } = useContext(CartContext);
+
+
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (

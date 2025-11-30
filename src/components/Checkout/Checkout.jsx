@@ -4,7 +4,7 @@ import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/fire
 import "./Checkout.css";
 
 const Checkout = () => {
-  const { cart, getTotalPrice, clearCart } = useContext(CartContext);
+  const { cart, getTotal, clearCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
   const [buyer, setBuyer] = useState({
     name: "",
@@ -23,7 +23,7 @@ const Checkout = () => {
     const order = {
       buyer,
       items: cart,
-      total: getTotalPrice(),
+      total: getTotal(),
       date: serverTimestamp()
     };
     const docRef = await addDoc(ordersCollection, order);
